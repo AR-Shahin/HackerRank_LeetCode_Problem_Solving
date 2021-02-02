@@ -1,0 +1,22 @@
+//Sales by match
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n, element;
+  int ara[101] = {0};
+  int pair = 0;
+
+  cin >> n;
+
+  for (int i = 0; i < n; i++) {
+    cin >> element;
+    ara[element]++;
+
+    pair = pair + ara[element] / 2;
+    ara[element] = ara[element] % 2;
+  }
+
+  cout <<pair<<endl;
+  return 0;
+}

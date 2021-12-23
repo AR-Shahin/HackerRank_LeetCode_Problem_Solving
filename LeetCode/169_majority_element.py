@@ -10,6 +10,3 @@ class Solution:
 ob = Solution()
 nums = [3, 2, 3]
 print(ob.majorityElement(nums))
-# a = (3)
-# x = sorted(set(nums))
-# print(x)

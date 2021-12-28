@@ -26,4 +26,5 @@ left = 1
 right = 22
 
 ob = Solution()
-print(ob.selfDividingNumbers(left, right))
+# print(ob.selfDividingNumbers(left, right))
+print(ord("a"))

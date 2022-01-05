@@ -14,9 +14,3 @@ class Solution:
 
 ob = Solution()
 nums = "52113"
-# print(ob.largestOddNumber(nums))
-print(nums[::-1])
-
-# string = "Shahin"
-# for c in string[::-1]:
-#     print(c)

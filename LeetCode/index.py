@@ -20,3 +20,12 @@ print(nums[::-1])
 # string = "Shahin"
 # for c in string[::-1]:
 #     print(c)
+
+
+k = 0
+while True:
+    if 4**k + 6**k == 9**k:
+        break
+    else:
+        k+=1
+print(k)

@@ -1,31 +1,19 @@
-
+# Bruteforce
 class Solution:
-    def largestOddNumber(self, nums):
-        if int(nums) % 2 != 0:
-            return nums
-        k = 0
-        for c in nums[::-1]:
-            if int(c) % 2 == 0:
-                k += 1
-            else:
-                return nums[:-k]
-        return ""
+    def isSameTree(self, p, q):
+        is_same = False
+        if len(p) == len(q):
+            for i in range(0, len(p)):
+                if p[i] == q[i]:
+                    is_same = True
+                else:
+                    is_same = False
+
+        return is_same
 
 
 ob = Solution()
-nums = "52113"
-# print(ob.largestOddNumber(nums))
-print(nums[::-1])
+p = [1, 2]
+q = [1, None, 2]
 
-# string = "Shahin"
-# for c in string[::-1]:
-#     print(c)
-
-
-k = 0
-while True:
-    if 4**k + 6**k == 9**k:
-        break
-    else:
-        k+=1
-print(k)
+print(ob.isSameTree(p, q))

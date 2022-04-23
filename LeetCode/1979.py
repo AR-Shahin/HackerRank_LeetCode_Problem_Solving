@@ -1,4 +1,3 @@
-
 class Solution:
     def findGCD(self, nums):
         max_val = max(nums)
@@ -11,8 +10,6 @@ class Solution:
         return max(temp)
         
         
-
-
 
 s = Solution();
 

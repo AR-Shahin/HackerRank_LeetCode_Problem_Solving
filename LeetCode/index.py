@@ -69,12 +69,14 @@ import math
 # print(s.largestPerimeter(nums))
 
 class Solution:
-    def addToArrayForm(self, num, k):
-        temp = ''.join(str(e) for e in num)
-        sum = int(temp) + k
-        converted_num = str(sum)
+    def numIdenticalPairs(self, nums):
+        count = 0
+        for i in range(0,len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] == nums[j]:
+                    count += 1
         
-        return list(converted_num)
+        return count
         
         
 
@@ -82,7 +84,7 @@ class Solution:
 
 s = Solution();
 
-num = [2,7,4]
-k = 181
+nums = [1,2,3]
 
-print(s.addToArrayForm(num,k))
+
+print(s.numIdenticalPairs(nums))

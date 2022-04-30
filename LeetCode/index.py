@@ -1,24 +1,16 @@
 class Solution:
-    def fizzBuzz(self, n):
-        answer = []
-        for i in range(1,n+1): 
-            if i % 3 == 0 and i % 5 == 0:
-                answer.append("FizzBuzz")
-            
-            elif i % 3 == 0:
-                answer.append("Fizz")
-                
-            elif i % 5 == 0:
-                answer.append("Buzz")
-                
-            else:
-                answer.append(str(i))
+    def maximumProduct(self, nums):
+        sum = 1
+        nums.sort(reverse=True)
+        for i in nums[0:3]:
+            sum *= i
+        
+        return sum    
 
-        return answer
-
+    
 s = Solution();
 
-n = 3
+nums = [1,2,3,4]
 
 
-print(s.fizzBuzz(n))
+print(s.maximumProduct(nums))

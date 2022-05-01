@@ -23,33 +23,19 @@
 
 
 class Solution:
-    def diagonalSum(self, mat):
+    def maximumWealth(self, accounts):
         
-        l = len(mat[0])
-        sum = 0
-        for i in range(0,len(mat)):
-            for j in range(0,len(mat)):
-                if i == j:
-                    sum += mat[i][j]   
-                    sum += mat[i][len(mat)-i-1]
-                              
-        if l % 2 != 0:
-            sum = sum - mat[l//2][l//2]
+        temp = []
+        for row in accounts:
+            temp.append(sum(row))
+
+        m = max(temp)
         
-        return sum
+        return m
 
             
 s = Solution();
 
-mat = [[1,2,3],
-        [4,5,6],
-        [7,8,9]]
-
-
-# mat = [[1,1,1,1],
-#               [1,1,1,1],
-#               [1,1,1,1],
-#               [1,1,1,1]]
-
-# mat = [[5]]
-print(s.diagonalSum(mat))
+accounts = [[1,2,3],[3,2,1]]
+accounts = [[1,5],[7,3],[3,5]]
+print(s.maximumWealth(accounts))

@@ -20,21 +20,36 @@
 # print(s.checkStraightLine(coordinates))
 
 
-class Solution:
-    def countNegatives(self, grid):
-        
-        count = 0
-        
-        for row in grid:
-            for col in row:
-                if col < 0:
-                    count += 1
 
-        return count
+
+class Solution:
+    def diagonalSum(self, mat):
+        
+        l = len(mat[0])
+        sum = 0
+        for i in range(0,len(mat)):
+            for j in range(0,len(mat)):
+                if i == j:
+                    sum += mat[i][j]   
+                    sum += mat[i][len(mat)-i-1]
+                              
+        if l % 2 != 0:
+            sum = sum - mat[l//2][l//2]
+        
+        return sum
 
             
 s = Solution();
 
-grid = [[3,2],[1,0]]
+mat = [[1,2,3],
+        [4,5,6],
+        [7,8,9]]
 
-print(s.countNegatives(grid))
+
+# mat = [[1,1,1,1],
+#               [1,1,1,1],
+#               [1,1,1,1],
+#               [1,1,1,1]]
+
+# mat = [[5]]
+print(s.diagonalSum(mat))

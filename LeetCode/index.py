@@ -22,20 +22,24 @@
 
 
 
-class Solution:
-    def maximumWealth(self, accounts):
-        
-        temp = []
-        for row in accounts:
-            temp.append(sum(row))
+from itertools import count
 
-        m = max(temp)
+
+class Solution:
+    def countEven(self, num):
         
-        return m
+        count = 0
+       
+        for n in range(1,num + 1):
+            if sum([int(x) for x in str(n)]) % 2 == 0:
+                count += 1
+        
+        return count
 
             
 s = Solution();
 
-accounts = [[1,2,3],[3,2,1]]
-accounts = [[1,5],[7,3],[3,5]]
-print(s.maximumWealth(accounts))
+num = 30
+print(s.countEven(num))
+
+

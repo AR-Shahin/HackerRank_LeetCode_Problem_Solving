@@ -22,24 +22,47 @@
 
 
 
-from itertools import count
+
+
+# class Solution:
+#     def isHappy(self, n):
+
+#         while n != 1:
+#             temp = [int(x) for x in str(n)]
+
+#             n = sum([int(x) * int(x) for x in str(n)])
+#             print(n)
+
+#             return True if n == 1 else False
+
+
+            
+# s = Solution();
+
+# n = 19
+# print(s.isHappy(n))
+
+
+from math import sqrt
 
 
 class Solution:
-    def countEven(self, num):
+    def judgeSquareSum(self, c):
         
-        count = 0
-       
-        for n in range(1,num + 1):
-            if sum([int(x) for x in str(n)]) % 2 == 0:
-                count += 1
-        
-        return count
-
+        low, high = 0, int(sqrt(c))
+        while low<=high:
+            sum = low * low + high * high
+            if sum == c:
+                return True
+            elif sum < c:
+                low +=1
+            else:
+                high -=1
+        return False
             
+                    
 s = Solution();
 
-num = 30
-print(s.countEven(num))
-
-
+c = 3
+print(s.judgeSquareSum(c))
+# print(int(sqrt(c+1)))

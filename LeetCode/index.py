@@ -46,25 +46,21 @@
 
 
 class Solution:
-    def countOperations(self, num1,num2):
-        count = 0
-        i = 1
-        while num1 != 0 or num2 != 0:
-           
-            if num1 == 0 or num2 == 0:
-                break
-            elif num1 >= num2:
-                num1 = num1 - num2
-            else:
-                num2 = num2 - num1
-            count +=1
-        return count
+    def sumZero(self, n):
+        temp = []
+        mid = n // 2
+        for i in range(1,mid +1):
+            temp.append(-i)
+            temp.append(i)
+        if n % 2 != 0:
+            temp.append(0)
+        return temp
             
             
                     
 s = Solution();
 
-num1 = 10
-num2 = 10
-print(s.countOperations(num1,num2))
+num1 = 3
+
+print(s.sumZero(num1))
 # print(int(sqrt(c+1)))

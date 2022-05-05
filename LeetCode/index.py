@@ -43,26 +43,28 @@
 # print(s.isHappy(n))
 
 
+
+
 class Solution:
-    def fib(self, n):
-        first,second = 0,1
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
-        if n == 2:
-            return second
-        if n > 2:
-            for i in range(3,n+1):
-                next = first + second
-                if i == n:
-                    return second + next
-                first ,second = second,next
+    def countOperations(self, num1,num2):
+        count = 0
+        i = 1
+        while num1 != 0 or num2 != 0:
+           
+            if num1 == 0 or num2 == 0:
+                break
+            elif num1 >= num2:
+                num1 = num1 - num2
+            else:
+                num2 = num2 - num1
+            count +=1
+        return count
             
             
                     
 s = Solution();
 
-c = 3
-print(s.fib(c))
+num1 = 10
+num2 = 10
+print(s.countOperations(num1,num2))
 # print(int(sqrt(c+1)))

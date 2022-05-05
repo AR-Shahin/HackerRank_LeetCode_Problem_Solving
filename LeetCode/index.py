@@ -43,26 +43,26 @@
 # print(s.isHappy(n))
 
 
-from math import sqrt
-
-
 class Solution:
-    def judgeSquareSum(self, c):
-        
-        low, high = 0, int(sqrt(c))
-        while low<=high:
-            sum = low * low + high * high
-            if sum == c:
-                return True
-            elif sum < c:
-                low +=1
-            else:
-                high -=1
-        return False
+    def fib(self, n):
+        first,second = 0,1
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        if n == 2:
+            return second
+        if n > 2:
+            for i in range(3,n+1):
+                next = first + second
+                if i == n:
+                    return second + next
+                first ,second = second,next
+            
             
                     
 s = Solution();
 
 c = 3
-print(s.judgeSquareSum(c))
+print(s.fib(c))
 # print(int(sqrt(c+1)))

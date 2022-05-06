@@ -46,21 +46,19 @@
 
 
 class Solution:
-    def sumZero(self, n):
-        temp = []
-        mid = n // 2
-        for i in range(1,mid +1):
-            temp.append(-i)
-            temp.append(i)
-        if n % 2 != 0:
-            temp.append(0)
-        return temp
+    def singleNumber(self, nums):
+        
+        temp =  list(set(nums) )
+        
+        for i in temp:
+            if nums.count(i) == 1:
+                return i
             
             
                     
 s = Solution();
 
-num1 = 3
+nums = [0,1,0,1,0,1,99]
 
-print(s.sumZero(num1))
+print(s.singleNumber(nums))
 # print(int(sqrt(c+1)))

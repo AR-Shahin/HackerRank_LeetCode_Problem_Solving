@@ -46,19 +46,24 @@
 
 
 class Solution:
-    def singleNumber(self, nums):
-        
-        temp =  list(set(nums) )
-        
-        for i in temp:
-            if nums.count(i) == 1:
-                return i
-            
+    def countPrimes(self, n):
+        count = 0
+        for i in range(2,n):
+            if self.isPrime(i):
+                # print(i)
+                count += 1
+        return count
+    
+    def isPrime(self,n):
+        for i in range(2,n):
+            if n % i == 0:
+                return False
+        return True
             
                     
 s = Solution();
 
-nums = [0,1,0,1,0,1,99]
+nums = 3
 
-print(s.singleNumber(nums))
+print(s.countPrimes(nums))
 # print(int(sqrt(c+1)))

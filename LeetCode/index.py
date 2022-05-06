@@ -46,24 +46,17 @@
 
 
 class Solution:
-    def countPrimes(self, n):
-        count = 0
-        for i in range(2,n):
-            if self.isPrime(i):
-                # print(i)
+    def findNumbers(self, nums):
+        count = 0 
+        for i in nums:
+            if len(str(i)) % 2 == 0:
                 count += 1
         return count
-    
-    def isPrime(self,n):
-        for i in range(2,n):
-            if n % i == 0:
-                return False
-        return True
             
                     
 s = Solution();
 
-nums = 3
-
-print(s.countPrimes(nums))
+nums = [12,345,2,6,7896]
+nums = [555,901,482,1771]
+print(s.findNumbers(nums))
 # print(int(sqrt(c+1)))
